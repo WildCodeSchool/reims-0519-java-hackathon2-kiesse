@@ -13,3 +13,4 @@ public class IndexController {
     public String search() {
         return "filter-question";
     }
+}
