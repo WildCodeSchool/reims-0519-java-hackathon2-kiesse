@@ -1,1 +1,40 @@
 
+<<<<<<< HEAD
+=======
+h1{
+    margin-top:30px;
+    font-family: Jazz LET, fantasy;
+}
+body{
+    background-color: #fcbf00;
+}
+.firstPart{
+    justify-content: center;
+}
+.nosadérent{
+    width: 100%;
+    height: 47vh;
+    margin:1vh;
+}
+.catégorie{
+    width:100%;
+    margin:1vh;
+}
+
+.btn{
+    margin-left: 75px;
+}
+h2{
+    text-align: center;
+    margin-right:30px;
+}
+.description{
+    background-color: #fff;
+    border-radius: 30px;
+    margin:10px;
+    border: 2px, solid, black;
+}
+.map{
+    height: 45vh;
+}
+>>>>>>> 2a71aa4d0e7f751caed04a675c4131c1393e23d6
