@@ -1,16 +1,28 @@
 package fr.kiesse.kiesseannuaire.entities;
 
-import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class PhysicalCharacteristic{
+@Entity
+public class PhysicalCharacteristic {
 
-    public PhysicalCharacteristic(){
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String capillarity;
+    private Boolean mustache;
+    private Boolean beard;
+    private Boolean glasses;
+    private Boolean sexe;
+
+    public PhysicalCharacteristic() {
+
     }
 
-    public PhysicalCharacteristic(String capillarity, Boolean mustache, Boolean beard, Boolean glasses, Boolean sexe){
+    public PhysicalCharacteristic(Long id, String capillarity, Boolean mustache, Boolean beard, Boolean glasses, Boolean sexe) {
+        this.id = id;
         this.capillarity = capillarity;
         this.mustache = mustache;
         this.beard = beard;
@@ -18,15 +30,13 @@ public class PhysicalCharacteristic{
         this.sexe = sexe;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
-    private String capillarity;
-    private Boolean mustache;
-    private Boolean beard;
-    private Boolean glasses;
-    private Boolean sexe;
+    public PhysicalCharacteristic(String capillarity, Boolean mustache, Boolean beard, Boolean glasses, Boolean sexe) {
+        this.capillarity = capillarity;
+        this.mustache = mustache;
+        this.beard = beard;
+        this.glasses = glasses;
+        this.sexe = sexe;
+    }
 
     public Long getId() {
         return id;
@@ -75,4 +85,5 @@ public class PhysicalCharacteristic{
     public void setSexe(Boolean sexe) {
         this.sexe = sexe;
     }
+
 }
