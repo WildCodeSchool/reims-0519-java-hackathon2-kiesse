@@ -14,8 +14,8 @@ body{
 }
 .nosadérent{
     width: 100%;
-    height: 50vh;
-    margin: 4px
+    height: 47vh;
+    margin:1vh;
 }
 .catégorie{
     width:100%;
@@ -34,4 +34,7 @@ h2{
     border-radius: 30px;
     margin:10px;
     border: 2px, solid, black;
+}
+.map{
+    height: 45vh;
 }
