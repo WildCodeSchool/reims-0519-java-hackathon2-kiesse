@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class PhysicalCharacteristic{
+public class PhysicalCharacteristic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,27 @@ public class PhysicalCharacteristic{
     private Boolean beard;
     private Boolean glasses;
     private Boolean sexe;
+
+    public PhysicalCharacteristic() {
+
+    }
+
+    public PhysicalCharacteristic(Long id, String capillarity, Boolean mustache, Boolean beard, Boolean glasses, Boolean sexe) {
+        this.id = id;
+        this.capillarity = capillarity;
+        this.mustache = mustache;
+        this.beard = beard;
+        this.glasses = glasses;
+        this.sexe = sexe;
+    }
+
+    public PhysicalCharacteristic(String capillarity, Boolean mustache, Boolean beard, Boolean glasses, Boolean sexe) {
+        this.capillarity = capillarity;
+        this.mustache = mustache;
+        this.beard = beard;
+        this.glasses = glasses;
+        this.sexe = sexe;
+    }
 
     public Long getId() {
         return id;
@@ -64,4 +85,5 @@ public class PhysicalCharacteristic{
     public void setSexe(Boolean sexe) {
         this.sexe = sexe;
     }
+
 }
