@@ -1,6 +1,6 @@
 spring.datasource.url = jdbc:mysql://localhost:3306/kiesse_db?serverTimezone=UTC
-spring.datasource.username = root
-spring.datasource.password = Jecode4wcs!
+spring.datasource.username = ######
+spring.datasource.password = ######
 
 spring.jpa.hibernate.ddl-auto = update
 
