@@ -5,12 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Physical_caract{
+public class PhysicalCharacteristic{
 
-    public Physical_caract(){
+    public PhysicalCharacteristic(){
     }
 
-    public Physical_caract(String capillarity, Boolean mustache, Boolean beard, Boolean glasses, Boolean sexe){
+    public PhysicalCharacteristic(String capillarity, Boolean mustache, Boolean beard, Boolean glasses, Boolean sexe){
         this.capillarity = capillarity;
         this.mustache = mustache;
         this.beard = beard;
