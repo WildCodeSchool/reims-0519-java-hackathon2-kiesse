@@ -1,26 +1,15 @@
 package fr.kiesse.kiesseannuaire.entities;
 
-import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class PhysicalCharacteristic{
-
-    public PhysicalCharacteristic(){
-    }
-
-    public PhysicalCharacteristic(String capillarity, Boolean mustache, Boolean beard, Boolean glasses, Boolean sexe){
-        this.capillarity = capillarity;
-        this.mustache = mustache;
-        this.beard = beard;
-        this.glasses = glasses;
-        this.sexe = sexe;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
     private String capillarity;
     private Boolean mustache;
