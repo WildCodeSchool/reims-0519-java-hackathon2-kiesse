@@ -6,6 +6,10 @@ public class IndexController {
 
     @GetMapping("/")
     public String index() {
-        return "home.html";
+        return "home";
     }
-}
+
+    @GetMapping("/search")
+    public String search() {
+        return "filter-question";
+    }
