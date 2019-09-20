@@ -1,133 +1,141 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="utf-8">
     <title>Bienvenue sur Kiesse</title>
     <link rel="stylesheet" href="style.css">
-<style>
+    <style>
+        .grid-container {
+            display: grid;
+            align-content: center;
+            grid-template-columns: 180px 180px 180px 180px 180px;
+            padding: 5px;
+        }
 
-.grid-container {
-  display: grid;
-  align-content: center;
-  grid-template-columns: 180px 180px 180px 180px 180px;  
-  padding: 5px;
-}
-.grid-item {
-  border: 2px solid rgba(250, 248, 248, 0.986);
-  background-color: #fcbf00;
-  font-size: 30px;
-  text-align: center;
-}
-body{
-    display: flex;
-    justify-content: center;
-}
-.img{
-    border-radius: 7px;
+        .grid-item {
+            border: 2px solid rgba(250, 248, 248, 0.986);
+            background-color: #fcbf00;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .img {
+            border-radius: 7px;
+        }
+
+        .close.clicked img {
+            filter: blur(5px);
+        }
+
+        /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-</style>
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+    </style>
 </head>
-<body>
-<!--     <div th:each="representative : ${representatives}" class="grid-item">
-        <img th:src="${representative.photo}">
-    </div> -->
-     <div class="grid-container">
 
+<body>
+    <h2 class="text-align">Resultats:</h2>
+    <div class="grid-container">
         <div class="grid-item" th:each="representative : ${representatives}">
             <button type="button" class="close" data-dismiss="modal">
-            <img th:src="${representative.photo}" class="img" alt="api agro" width="120px" height="120px">
-            <span th:text="${representative.firstName}"></span>
-            <span th:text="${representative.lastName}"></span></button>
+                <img th:src="${representative.photo}" class="img" alt="api agro" width="120px" height="120px">
+                <span th:text="${representative.firstName}"></span>
+                <span th:text="${representative.lastName}"></span></button>
+        </div>
+        <div class="grid-item">
+            <button type="button" data-dismiss="modal">
+                <img th:src="@{/images/etienne.jpeg}" class="img" alt="api agro" width="120px" height="120px">
+                <span>Etienne Lapierre</span>
+            </button>
+        </div>
+        <!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
 
-        </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-<!--        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-            <img src="../static/images/Artechdrone .jpg" class="img" alt="artechdrone" width="120px" height="120px">Artechdrone
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-            <img src="../static/images/Arysta (France) .jpg" class="img" alt="arysta" width="120px" height="120px">Arysta
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-            <img src="../static/images/CIVC .jpg" class="img" alt="civc" width="120px" height="120px">CIVC
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-            <img src="../static/images/Crage .jpg" class="img" alt="crage" width="120px" height="120px">Crage
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-            <img src="../static/images/crestic.jpg" class="img" alt="crestic" width="120px" height="120px">Crestic
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-            <img src="../static/images/Cristal Union .jpg" class="img" alt="cristal" width="120px" height="120px">Cristal Union
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-            <img src="../static/images/CA.jpeg" class="img" alt="credit" width="120px" height="120px">Crédit Agricole Nord Est
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-            <img src="../static/images/Cérèsia .jpg" class="img" alt="ceresia" width="120px" height="120px">Cérèsia
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/EMC2 .jpg" class="img" alt="emc2" width="120px" height="120px">EMC2
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/Ensaia .jpg" class="img" alt="ensaia" width="120px" height="120px">Ensaia
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/FDSEA51 .jpg" class="img" alt="crage" width="120px" height="120px">FDSEA51
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/GRDF .jpg" class="img" alt="grdf" width="120px" height="120px">GRDF
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/IAR .jpg" class="img" alt="iar" width="120px" height="120px">IAR
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/InVivo .jpg" class="img" alt="invivo" width="120px" height="120px">InVivo
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/Rittmo.jpg" class="img" alt="rittmo" width="120px" height="120px">Rittmo
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/Soufflet .jpg" class="img" alt="soufflet" width="120px" height="120px">Soufflet
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/Synergie Est .jpg" class="img" alt="synergie" width="120px" height="120px">Synergie
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/Terrasolis .jpg" class="img" alt="terrasolis" width="120px" height="120px">Terrasolis
-            </button>
-        </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-                <img src="../static/images/Vivescia .jpg" class="img" alt="vivescia" width="120px" height="120px">Vivescia
-            </button>
-        </div>
-        
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Details de l'entreprise</p>
+  </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3" id="artechdrone">
-                
-                                    
-            </div>
-        </div>    
-    </div>
+</div>
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                modal.style.display = "none";
+                }
+            }
+            </script>
+        <script>
+            for (let element of document.getElementsByClassName("close")) {
+                element.addEventListener("click", () => {
+                    element.classList.toggle("clicked")
+                }
+                )
+            }</script>
+</body>
 
- --></body>
 </html>

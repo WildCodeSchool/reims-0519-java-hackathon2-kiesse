@@ -23,6 +23,7 @@ public class IndexController {
 
     @GetMapping("/search")
     public String search() {
+        List<Representative> representatives = representativeRepository.findAll();
         return "filter-questions";
     }
 
