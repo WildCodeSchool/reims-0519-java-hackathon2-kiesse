@@ -7,42 +7,41 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <link rel="stylesheet" type="text/css" th:href="@{style.css}">
     </head>
 
     <body>
         <header>
             <div class="container-fluid">
                 <div class="row justify-content-around">
-                    <img class="logoTerra" src="../static/img/terrasolis.png" alt="logoTerra" />
+                    <img class="logoTerra" th:src="@{/img/terrasolis.png}" alt="logoTerra" />
                     <h1>KIESSE</h1>
                 </div>
             </div>
         </header>
 
 
-        <div class="container firstPart">
-            <div class="row mt-1">
-                <div class="col-md-3">
-                    <img class="nosadérent" th:src="@{../static/img/nosadérent.png}" alt="Nos principes">
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <img class="nosadérent" th:src="@{/img/nosadérent.png}" alt="Nos principes">
                     <a href="/search" class="btn btn-primary centered" role="button">découvrir nos adhérents</a>
                 </div>
-                <div class="col-md-9">
-                    <img class="catégorie" src="../static/img/catégorie.png" alt="Les services" />
+                <div class="col-md-6">
+                    <img class="catégorie" th:src="@{img/arbre.png}" alt="Les services"/>
                 </div>
-                <div class="col-md-3 mt-1 description border border-primary">
-                        <h2>Descriptif</h2>
-                        <hr>
-                        <p>Kiesse est une application à destination des particuliers en recherche d'accompagnement pour le
-                            développement des agriculteurs.
-                            Vous pouvez trouvez ici des professionnels dans le secteur de la recherche et développement, de
-                            l'aide matérielle.
-                            Notre site va permettre de créer une interaction entre des particuliers et professionnels dans le
-                            but de promouvoir et d'accompagner nos clients</p>
-                    </div>
-                    <div class="col-md-9 mt-1">
-                        <img src="../static/img/carte.png" alt="map" class="map" />
-                    </div>
+                <div class="col-md-12 mt-2 description border border-primary">
+                    <h2>Kiesse que c'est?</h2>
+                    <hr>
+                    <p>Kiesse est une application à destination des particuliers en recherche d'accompagnement pour le
+                        développement des agriculteurs.
+                        Vous pouvez trouvez ici des professionnels dans le secteur de la recherche et développement, de
+                        l'aide matérielle.
+                        Notre site va permettre de créer une interaction entre des particuliers et professionnels dans le
+                        but de promouvoir et d'accompagner nos clients
+                        <img th:src="@{/img/catégorie.png}" alt="map" class="map" />
+                    </p>
+                </div>
             </div>
         </div>
     </body>

@@ -19,7 +19,7 @@ body{
 .centered {
     position: absolute;
     top: 75%;
-    left: -10%;
+    left: 18%;
 }
 .catégorie{
     max-width: 100%;
@@ -39,5 +39,5 @@ h2{
 }
 .map{
     width: 100%;
-    max-height: 75%
+    max-height: 70%
 }
