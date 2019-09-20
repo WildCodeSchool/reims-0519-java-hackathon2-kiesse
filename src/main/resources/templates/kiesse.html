@@ -15,9 +15,6 @@
 .grid-item {
   border: 2px solid rgba(250, 248, 248, 0.986);
   background-color: #fcbf00;
-  padding: 20px;
-  padding-top: 15px;
-  padding-bottom: 40px;
   font-size: 30px;
   text-align: center;
 }
@@ -32,12 +29,20 @@ body{
 </style>
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
-               
-            <img src="../static/images/API AGRO .jpg" class="img" alt="api agro" width="120px" height="120px">API AGRO            </button>
+<!--     <div th:each="representative : ${representatives}" class="grid-item">
+        <img th:src="${representative.photo}">
+    </div> -->
+     <div class="grid-container">
+
+        <div class="grid-item" th:each="representative : ${representatives}">
+            <button type="button" class="close" data-dismiss="modal">
+            <img th:src="${representative.photo}" class="img" alt="api agro" width="120px" height="120px">
+            <span th:text="${representative.firstName}"></span>
+            <span th:text="${representative.lastName}"></span></button>
+
         </div>
-        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
+
+<!--        <div class="grid-item"><button type="button" class="close" data-dismiss="modal">
             <img src="../static/images/Artechdrone .jpg" class="img" alt="artechdrone" width="120px" height="120px">Artechdrone
             </button>
         </div>
@@ -124,5 +129,5 @@ body{
         </div>    
     </div>
 
-</body>
+ --></body>
 </html>
