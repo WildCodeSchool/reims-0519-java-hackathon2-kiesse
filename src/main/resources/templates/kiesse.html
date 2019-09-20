@@ -34,43 +34,43 @@
         }
 
         /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
+        /* Modal Content */
+        .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+        /* The Close Button */
+        .close1 {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
+        .close1:hover,
+        .close1:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
     </style>
 </head>
 
@@ -84,21 +84,22 @@
                 <span th:text="${representative.lastName}"></span></button>
         </div>
         <div class="grid-item">
-            <button type="button" data-dismiss="modal">
+            <button id="myBtn" type="button" data-dismiss="modal">
                 <img th:src="@{/images/etienne.jpeg}" class="img" alt="api agro" width="120px" height="120px">
                 <span>Etienne Lapierre</span>
             </button>
         </div>
         <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Details de l'entreprise</p>
+    <img class="logoTerra" th:src="@{/img/terrasolis.png}" alt="logoTerra" />
+    <p>Association de promotion de la multifonctionnalité via l'émergence d'innovations agricoles en Grand Est</p>
+    <p>Filière: Agriculture =  Grandes cultures + Elevage + Viticulture</p>
+
   </div>
 
 </div>
