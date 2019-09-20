@@ -2,7 +2,7 @@ package fr.kiesse.kiesseannuaire.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 @Controller
 public class IndexController {
 
@@ -15,4 +15,11 @@ public class IndexController {
     public String search() {
         return "filter-questions";
     }
+
+    @GetMapping("/results")
+    public String resultSearch() {
+
+        return "kiesse";
+    }
+
 }

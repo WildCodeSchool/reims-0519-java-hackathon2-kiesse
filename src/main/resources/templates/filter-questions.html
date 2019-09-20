@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
     <head>
-        <meta charset="utf-8" />
-        <title>Annuaire Terrasolis | Questionnaire Qui est-ce?</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/style.css">
+        <meta charset="utf-8">
+        <title>Kiesse</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" th:href="@{style.css}">
     </head>
 
     <body>
-        <main class="container">
+        <header>
+            <div class="container-fluid">
+                <div class="row justify-content-around">
+                    <img class="logoTerra" th:src="@{/img/terrasolis.png}" alt="logoTerra" />
+                    <h1>KIESSE</h1>
+                </div>
+            </div>
+        </header>
+        <main class="container border border-primary rounded mt-5 mb-5 pt-5 pb-5">
             <h2 class="text-center">Qui voulez vous contacter?</h2>
-            <section class="mx-auto rounded border border-warning">
+            <hr>
+            <section class="mx-auto rounded">
                 <h3 class="text-center">Est-ce que vous recherchez quelqu'un avec une barbe?</h3>
                 <div class="d-flex justify-content-center">
                     <div class="btn-group" role="group" aria-label="Basic example">
@@ -21,11 +31,11 @@
                         <button type="button" name="questionnaire" class="btn btn-secondary">Non</button>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
+                <hr>
                 <h3 class="text-center">Il vous reste X resultats.</h3>
+                <div class="btn-group d-flex justify-content-center">
+                    <a href="/results" class="btn btn-secondary">Voir les résultats</button></a>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-secondary">Voir les résultats</button>
                 </div>
             </section>
         </main>

@@ -34,8 +34,6 @@ h2{
 }
 .description{
     background-color:rgb(52, 180, 180, 0.95);
-    border: 1vh, solid, black;
-    height: 100%;
 }
 .map{
     width: 100%;

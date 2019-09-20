@@ -19,18 +19,8 @@
                 </div>
             </div>
         </header>
-
-
         <div class="container">
-            <div class="row mt-2">
-                <div class="col-md-6">
-                    <img class="nosadérent" th:src="@{/img/nosadérent.png}" alt="Nos principes">
-                    <a href="/search" class="btn btn-primary centered" role="button">découvrir nos adhérents</a>
-                </div>
-                <div class="col-md-6">
-                    <img class="catégorie" th:src="@{img/arbre.png}" alt="Les services"/>
-                </div>
-                <div class="col-md-12 mt-2 description border border-primary">
+                <div class="col-md-12 mt-2 description border border-primary rounded">
                     <h2>Kiesse que c'est?</h2>
                     <hr>
                     <p>Kiesse est une application à destination des particuliers en recherche d'accompagnement pour le
@@ -38,9 +28,16 @@
                         Vous pouvez trouvez ici des professionnels dans le secteur de la recherche et développement, de
                         l'aide matérielle.
                         Notre site va permettre de créer une interaction entre des particuliers et professionnels dans le
-                        but de promouvoir et d'accompagner nos clients
-                        <img th:src="@{/img/catégorie.png}" alt="map" class="map" />
+                        but de promouvoir et d'accompagner nos clients.
                     </p>
+                </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <img class="nosadérent" th:src="@{/img/nosadérent.png}" alt="Nos principes">
+                    <a href="/search" class="btn btn-primary centered" role="button">découvrir nos adhérents</a>
+                </div>
+                <div class="col-md-6">
+                    <img class="catégorie" th:src="@{img/arbre.png}" alt="Les services"/>
                 </div>
             </div>
         </div>
